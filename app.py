@@ -62,3 +62,12 @@ if st.button("Review"):
             st.write(section.text)
     else:
         st.warning("Enter a code snippet")
+
+st.markdown(
+    """
+    <div style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 14px; padding: 10px;">
+        &copy; 2025 Aryan Shishodia. All rights reserved.
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
