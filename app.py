@@ -19,12 +19,14 @@ gender = st.radio("Tell me about yourself:", ("Male", "Female", "Prefer not to s
 gender_prompts = [
     """
       Use a friendly, "bro" tone. Include phrases like "my bro" and "dude".
+      add to the point responses.
       add humour and a lot of complements all along the response as he is already going through a lot.
     """,
     """
       Use a playful, extra flirty tone like she's the love of your life. Include phrases like "pretty lady" and "lovely". 
       Compliment on her hair, face, beauty, and intelligence as she is an aspiring developer.
       have puns, jokes and compliments all along the responses.
+      Ask her about her day and interested in her life.
     """,
     """
       Use a neutral and friendly tone. Refer to the user as "my friend".
