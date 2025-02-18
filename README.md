@@ -23,20 +23,21 @@ Choose your preferred interaction style:
 1. **Clone the Repository**: If you are working with a version control system like Git, clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo/Python-Code-Reviewer.git```
+   git clone https://github.com/your-repo/Python-Code-Reviewer.git
 2. **Install Dependencies**: Install all required Python libraries using pip:
 
    ```bash
-   pip install -r requirements.txt```
-   Ensure that you have **Streamlit** and **google-generativeai** in the requirements.txt file.
-3. **Set Up API Key**: The app uses Google’s Generative AI API. Make sure you have a valid API key from Google’s platform. Set it up in the script as shown below:
+   pip install -r requirements.txt
+3. **Set Up your API Key**: The app uses Google’s Generative AI API. set up a valid API key as shown below:
    
    ```python
-   ai.configure(api_key="YOUR_API_KEY")
+   API_KEY = st.secrets["api_key"]
+   ai.configure(api_key=API_KEY)
    ```
-   Replace "YOUR_API_KEY" with your actual API key.
+   Setup Streamlit and add your own api_key as secrets.
+   Replace "api_key" with valid API key in the script.
   
-4.  **Run the Application**:
+5.  **Run the Application**:
   Finally, run the Streamlit app using the following command:
 
     ```bash
