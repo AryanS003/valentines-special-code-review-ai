@@ -1,5 +1,3 @@
-# code-review-app-valentines-day
-
 ## 💌 Valentine's Day Special Project 💌
 Love is in the air... and so are your bugs! I've got you a companion who could just fix that problem.
 Whether you're single or taken, your code deserves some love this Valentine's Day!
