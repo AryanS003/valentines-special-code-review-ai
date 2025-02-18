@@ -18,7 +18,7 @@ Choose your preferred interaction style:
 2. Paste your code
 3. Let AI do the work
 
-### Step-by-Step Guide
+### 🤗 Step-by-Step Guide
 
 1. **Clone the Repository**: If you are working with a version control system like Git, clone the repository:
 
