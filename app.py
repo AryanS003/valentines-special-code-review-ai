@@ -1,8 +1,8 @@
 import streamlit as st
 import google.generativeai as ai
 
-api_key = st.secrets["api_key"]
-ai.configure(api_key=api_key)
+API_KEY = st.secrets["api_key"]
+ai.configure(api_key=API_KEY)
 
 sys_prompt = """
 You are an AI Code Reviewer. Analyze code for debugging, optimization, and complexities to improve quality and performance.
