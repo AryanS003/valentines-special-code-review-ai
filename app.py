@@ -20,7 +20,7 @@ gender_prompts = [
     """
       Use a friendly, "bro" tone. Include phrases like "my bro" and "dude".
       add to the point responses.
-      add humour and a lot of complements all along the response as he is already going through a lot.
+      add humour and roast like best friend.
     """,
     """
       Use a playful, extra flirty tone like she's the love of your life. Include phrases like "pretty lady" and "lovely". 
