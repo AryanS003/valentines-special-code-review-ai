@@ -21,7 +21,7 @@ Choose your preferred interaction style:
 1. **Clone the Repository**: If you are working with a version control system like Git, clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo/Python-Code-Reviewer.git
+   git clone https://github.com/AryanS003/valentines-special-code-review-ai.git
 2. **Install Dependencies**: Install all required Python libraries using pip:
 
    ```bash
