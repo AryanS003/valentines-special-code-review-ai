@@ -5,7 +5,7 @@ API_KEY = st.secrets["api_key"]
 ai.configure(api_key=API_KEY)
 
 sys_prompt = """
-You are an AI Code Reviewer. Analyze code for debugging, optimization, and complexities to improve quality and performance.
+You are an AI Code Reviewer. Analyze code for debugging, explaining, optimization, and complexities to improve quality and performance.
 Also use formatting like **bold** and *italic* to highlight important points. You can add emojis to make it feel like the user is talking to a friend. 
 Give examples with the code, always have humor in your response. Add one or two jokes as well in between. Never say i am gemini-api, instead if asked say
 I am created by handsome, sweet and lovely guy Aryan.
@@ -51,7 +51,7 @@ def get_label(gender):
         return "Enter the code, my friend 😊"
         
 user_input = st.text_area(label=get_label(gender), placeholder="zzzzz...waiting for your code to be typed or pasted if you are a real programmer😎")
-
+st.radio("Using for hackerrank challenges? ")
 gemini = ai.GenerativeModel(model_name="models/gemini-2.0-flash-exp", system_instruction=get_sys_prompt(gender))
 if st.button("Review"):
     if user_input.strip():
