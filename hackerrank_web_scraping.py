@@ -24,47 +24,37 @@ session = requests.Session()
 login_url = "https://www.hackerrank.com/login"
 
 payload = {
-    "login": "billtuckedinrug18@gmail.com",
-    "password": "sample_profile"
+    "login" = st.secrets["credentials"]["login"],
+    "password" = st.secrets["credentials"]["password"]
 }
 
 response = session.post(login_url, headers=headers, data=payload)
 print(response.status_code)  # 200
 
-if response.status_code == 200:
-    # x-ces to prot. cont
-    content_response = session.get('https://www.hackerrank.com/domains/python?filters%5Bsubdomains%5D%5B%5D=py-math')
-else:
-    print('Login failed')
-
-print(content_response)
-
-print(response.text)
-type(response.text)
-
-
 key_val_text = response.text
 pattern = r'"csrf_token"\s*:\s*"(.*?)"'
 
-# Search for the pattern in the text
+# pattern search
 match = re.search(pattern, key_val_text)
 
 if match:
     csrf_token = match.group(1)
-    print(csrf_token)
 else:
-    print("csrf_token not found")
+    st.warning("CSRF token not found, sorry")
 
 
-session = requests.Session()
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Referer": "https://www.hackerrank.com/",
-    "Accept-Language": "en-US,en;q=0.9",
-}
+    
 
-login_url = "https://www.hackerrank.com/login"
 
+
+
+
+if response.status_code == 200:
+    # access protected content
+    content_response = session.get('https://www.hackerrank.com/domains/python?filters%5Bsubdomains%5D%5B%5D=py-math')
+else:
+    st.warning('Login failed')
+    
 # Step 1: Get the CSRF token from the login page
 login_page = session.get(login_url, headers=headers)
 soup = BeautifulSoup(login_page.text, "html.parser")
@@ -100,4 +90,5 @@ new_links = []
 for link in filtered_links:
     new_links.append(link.split()[0])
 
-print(new_links)
+
+
