@@ -1,6 +1,6 @@
 import streamlit as st
 import google.generativeai as ai
-import hackerrank_web_scraping
+
 
 API_KEY = st.secrets["api_key"]
 ai.configure(api_key=API_KEY)
