@@ -1,5 +1,6 @@
 import streamlit as st
 import google.generativeai as ai
+import hackerrank_web_scraping
 
 API_KEY = st.secrets["api_key"]
 ai.configure(api_key=API_KEY)
@@ -51,8 +52,13 @@ def get_label(gender):
         return "Enter the code, my friend 😊"
         
 user_input = st.text_area(label=get_label(gender), placeholder="zzzzz...waiting for your code to be typed or pasted if you are a real programmer😎")
-is_hack = st.radio("Using for hackerrank challenges? ", ('yes'))
+
 gemini = ai.GenerativeModel(model_name="models/gemini-2.0-flash-exp", system_instruction=get_sys_prompt(gender))
+
+is_hack = st.checkbox("Hacker Mode?")
+if is_hack : 
+    hackerrank_web_scraping.hack_mode_init(st.session_state["is_hack"])
+
 if st.button("Review"):
     if user_input.strip():
         with st.spinner("Reviewing your code... ⏳"):
