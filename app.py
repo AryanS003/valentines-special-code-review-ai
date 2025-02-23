@@ -55,21 +55,15 @@ user_input = st.text_area(label=get_label(gender), placeholder="zzzzz...waiting 
 
 gemini = ai.GenerativeModel(model_name="models/gemini-2.0-flash-exp", system_instruction=get_sys_prompt(gender))
 
-is_hack = st.checkbox("Hacker Mode?")
-
-
 if st.button("Review"):
     if user_input.strip():
-        if is_hack : 
-            hackerrank_web_scraping.hack_mode_init(st.session_state["is_hack"])
-            elif :
-                with st.spinner("Reviewing your code... ⏳"):
-                    response = gemini.generate_content(user_input)
-                    st.subheader("Here you go,")
-                for section in response:
-                    st.write(section.text)
-            else:
-                st.warning("Enter a code snippet")
+        with st.spinner("Reviewing your code... ⏳"):
+            response = gemini.generate_content(user_input)
+            st.subheader("Here you go,")
+        for section in response:
+            st.write(section.text)
+    else:
+        st.warning("Enter a code snippet")
 
 st.markdown(
     """
